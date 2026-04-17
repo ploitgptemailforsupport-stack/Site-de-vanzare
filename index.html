@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Novacord Key System</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <h1>Novacord</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Discord</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
+
+  <section class="Menur">
+    <div class="Menu">
+      <h3>Hello!</h3>
+      <p>Click continue to get your key.</p>
+
+      <button id="continueBtn">Continue..</button>
+
+      <p id="timerText"></p>
+      <p id="keyText"></p>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>💉 Executor</h3>
+      <p>Not out yet</p>
+    </div>
+
+    <div class="card">
+      <h3>🟦 Discord</h3>
+      <p>https://discord.gg/8EwpWUzKZT</p>
+    </div>
+
+    <div class="card">
+      <h3>🔑 Info</h3>
+      <p>Key system active</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Novacord</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById("continueBtn");
+    const timerText = document.getElementById("timerText");
+    const keyText = document.getElementById("keyText");
+
+    let countdown = 60;
+    let interval;
+
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      timerText.textContent = "Please wait 60 seconds...";
+
+      interval = setInterval(() => {
+        countdown--;
+
+        timerText.textContent = "Please wait " + countdown + " seconds...";
+
+        if (countdown <= 0) {
+          clearInterval(interval);
+
+          timerText.textContent = "Done!";
+          keyText.textContent = "🔑 Key: Rombad3012941232139";
+
+          btn.textContent = "Completed";
+        }
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
